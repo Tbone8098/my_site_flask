@@ -1,0 +1,54 @@
+{% if session['page'] == 'home' %}
+<div class="row nav-head">
+    <div class="header-sky cover-img sky-img-upper txt-white ">
+        {% if 'invincible' not in session %}
+        <div class="row">
+            <a href="/invincible"></a>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="txt-center to-type-area wf-load opacity-0">
+                <div class="row">
+                    <h1>I am</h1>
+                </div>
+                <div class="row">
+                    <p class="to-type font-1" style="display: none;">Tyler Thibault</p>
+                    <p class="to-type font-1" style="display: none;">a Christian </p>
+                    <p class="to-type font-1" style="display: none;">a Husband </p>
+                    <p class="to-type font-1" style="display: none;">a Father </p>
+                    <p class="to-type font-1" style="display: none;">a Full Stack Developer</p>
+                    <p class="to-type font-1" style="display: none;">a Maker</p>
+                    <p class="to-type font-1" style="display: none;">a Life Long Learner</p>
+                    {% if 'invincible' in session %}
+                    <a link="https://edit911.com/wp-content/uploads/2015/03/I-Am-Invincible-GoldenEye.gif?4dbbde"
+                        target="_blank" class="to-type" style="display: none;">INVINCIBLE!!</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+    <div class="row navbar p-0">
+        {% if session['page_head'] == 'home' %}
+        <a link="/contact_me" class="nav-btn col-3 txt-center p-0">
+            <p class="font-1 contact-me-btn">Contact Me</p>
+        </a>
+        {% else %}
+        <a link="/" class="nav-btn col-3">
+            <p class="font-1">Home</p>
+        </a>
+        {% endif %}
+        <a link="/edu" class="nav-btn col-3 txt-center p-0 {{ 'box-active' if session['page_head'] == 'edu' else '' }}">
+            <p class="font-1">Edu</p>
+        </a>
+        <a link="/jobs"
+            class="nav-btn col-3 txt-center p-0 {{ 'box-active' if session['page_head'] == 'jobs' else '' }}">
+            <p class="font-1">Jobs</p>
+        </a>
+        <a link="/projects"
+            class="nav-btn col-3 txt-center p-0 {{ 'box-active' if session['page_head'] == 'projects' else '' }}">
+            <p class="font-1">Projects</p>
+        </a>
+    </div>
+</div>

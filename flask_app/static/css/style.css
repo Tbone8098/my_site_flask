@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Barrio&family=Buda:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Georama&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-1: rgb(36, 36, 36);
+  --gray-1: #c4c4c4;
+
+  --font-1: "Barrio", cursive;
+  --font-2: "Buda", cursive;
+  --font-3: "Georama", sans-serif;
+
+  --animation-time-1: 500ms;
+  --animation-time-2: 1000ms;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  font-family: var(--font-2);
+  min-height: 100%;
+}
+
+container-fluid {
+  height: 100.1vh;
+}
+
+h1,
+h2,
+.font-1 {
+  font-family: var(--font-1);
+}
+
+.font-3 {
+  font-family: var(--font-3);
+}
+
+a {
+  text-decoration: none;
+}
+
+.wf-load {
+  transition-duration: 500ms;
+}
+
+.cover-img {
+  width: 100%;
+  height: 30vh;
+  background-size: cover;
+}
+
+.sky-img {
+  background-image: url("../img/sky.jpg");
+}
+
+.sky-img-upper {
+  background-image: linear-gradient(180deg, rgb(0, 0, 0, 0), var(--dark-1)),
+    url("../img/sky.jpg");
+  height: 10em;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.sky-img-lower {
+  background-image: linear-gradient(
+      0deg,
+      rgba(212, 212, 83, 0.507),
+      50%,
+      rgb(0, 0, 0, 0) 100%
+    ),
+    url("../img/sky.jpg");
+  z-index: 0;
+}
+
+.footer-mountain-1 {
+  position: absolute;
+  bottom: 0;
+  background-image: url("../img/mountain1.png");
+  z-index: 1;
+  background-size: cover;
+}
+.footer-mountain-2 {
+  position: absolute;
+  bottom: 0;
+  background-image: url("../img/mountain2.png");
+  z-index: 2;
+  background-size: cover;
+}
+.footer-mountain-3 {
+  position: absolute;
+  bottom: 0;
+  background-image: url("../img/mountain3.png");
+  z-index: 3;
+  background-size: cover;
+}
+.footer-box {
+  position: relative;
+}
+.navbar {
+  position: relative;
+  margin: 0;
+}
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-1);
+  color: white;
+  height: 3em;
+}
+
+.nav-btn p {
+  margin: 0;
+}
+
+.nav-btn:hover,
+.nav-btn:active {
+  background: var(--gray-1);
+  color: black;
+}
+
+.nav-head {
+  position: relative;
+  top: 0;
+  transition: var(--animation-time-1) ease;
+}
+
+.box-active {
+  background: var(--gray-1) !important;
+  color: black !important;
+}
+
+.breadcrumb-item {
+  font-family: var(--font-1);
+}
+
+.breadcrumb-item + .active > a {
+  pointer-events: none;
+}
+
+.home-box {
+  overflow-y: auto;
+}
+
+.home-middle {
+  overflow-y: auto;
+  /* max-height: 100%; */
+}
+
+.tech-box {
+  /* margin: 1em; */
+  padding: 1em;
+  border: 1px solid black;
+  background: var(--gray-1);
+}
+
+.title-blocks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 85vh;
+  width: 100%;
+}
+
+.project-box {
+  margin: 1em;
+  padding: 0.5em;
+  width: 7em;
+  height: 7em;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.to-type {
+  color: white;
+}
+
+.to-type-area {
+  position: fixed;
+  top: 2em;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-box {
+  /* width: 50%; */
+  border: 4px solid black;
+}
+
+.scroll-up {
+  /* position: absolute; */
+  width: 110vw;
+  top: -21vh;
+  right: 0;
+  left: 0;
+}
+
+.grow-on-hover:hover {
+  transform: scale(1.1);
+}
+
+.main-content {
+  position: relative;
+  /* min-height: 100%; */
+  animation: fade-in var(--animation-time-1) forwards;
+}
+
+.fade-out {
+  animation: fade-out var(--animation-time-2) forwards;
+}
+
+.scroll-left {
+  animation: scroll-left var(--animation-time-2) forwards;
+}
+
+.scroll-right {
+  animation: scroll-right var(--animation-time-2) forwards;
+}
+
+.scroll-down {
+  animation: scroll-down var(--animation-time-2) forwards;
+}
+
+.opening {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150vw;
+  height: 100vh;
+  z-index: 10;
+  /* background-size: cover; */
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -200vw;
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -200vw;
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -200vh;
+  }
+}

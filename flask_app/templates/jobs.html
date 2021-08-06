@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Jobs</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="row">
+    <div class="title-blocks">
+        {% for job_id in all_jobs %}
+        <a link="/job/{{job_id}}" class="title-block txt-black link">
+            <div class="d-flex justify-content-between me-3">
+                <h1>{{all_jobs[job_id]['title']}}</h1>
+                <span>View</span>
+            </div>
+            <p>{{all_jobs[job_id]['start_date'].strftime('%Y-%m-%d') }} - {{'Present' if all_jobs[job_id]['present'] ==
+                True
+                else
+                all_jobs[job_id]['end_date'].strftime('%Y-%m-%d') }}
+            </p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

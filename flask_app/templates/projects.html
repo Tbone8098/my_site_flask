@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Projects</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="projects d-flex flex-wrap justify-content-center">
+    {% for project_id in all_projects %}
+    <a link="/project/{{project_id}}" class="link">
+        <div
+            class="project-box d-flex align-items-center justify-content-center {{'bg-dark-1 txt-gray-1' if loop.index0 % 2 == 0 else 'bg-gray-1 txt-dark-1'}} ">
+            <h3>{{all_projects[project_id]['title']}}</h3>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+<script src="{{url_for('static', filename='js/index_page.js')}}"></script>
+{% endblock %}

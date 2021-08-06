@@ -1,0 +1,45 @@
+.txt-white {
+  color: white;
+}
+.txt-black {
+  color: black;
+}
+.txt-dark-1 {
+  color: var(--dark-1);
+}
+.txt-gray-1 {
+  color: var(--gray-1);
+}
+
+.bg-white {
+  background: white;
+}
+.bg-black {
+  background: black;
+}
+.bg-dark-1 {
+  background: var(--dark-1);
+}
+.bg-gray-1 {
+  background: var(--gray-1);
+}
+
+.height-full {
+  height: 100vh;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+a,
+.a-tag {
+  color: blue;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-1 {
+  opacity: 1;
+}
