@@ -1,0 +1,26 @@
+{{project}} = my_site
+{{repo name}} = my_site_flask
+
+
+[Unit]
+Description=Gunicorn instance
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/my_site_flask
+Environment="PATH=/home/ubuntu/my_site_flask/venv/bin"
+ExecStart=/home/ubuntu/my_site_flask/venv/bin/gunicorn --workers 3 --bind unix:my_site.sock -m 007 wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+server {
+    listen 80;
+    server_name 18.222.83.160;
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/my_site_flask/my_site.sock;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/my_site /etc/nginx/sites-enabled
