@@ -1,28 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row home-box my-5">
-    <div class="tech-box col-10 offset-1 col-sm-5 offset-sm-1">
-        <h3>Technologies I have learned along the way</h3>
-        <p>With many to be learned in the future!</p>
-        {% for tech in all_tech.imgs %}
-        <img class="grow-on-hover" src="{{url_for('static', filename='img/tech/'+tech)}}" alt="">
-        {% endfor %}
+<div class="row">
+    <div class="d-flex flex-column align-items-center col-10 offset-1 mt-3">
+        <div class="row">
+            <h3> <strong> About Me </strong></h3>
+        </div>
+        <div class="row">
+            {{ about_me.content | safe | truncate(250) }}
+        </div>
+        <div class="row">
+            <a href="/about_me">View More</a>
+        </div>
     </div>
-    <div class="col-10 offset-1 col-sm-5">
-        <div class="row home-box">
-            <div class="home-middle txt-center">
-                <div class="row">
-                    <h3>About Me</h3>
-                </div>
-                <div class="row">
-                    <div class="offset-1 col-10">
-                        <p>{{about_me.content | safe | truncate(250)}}</p>
-                        <div class="d-flex justify-content-center">
-                            <a href="/about_me">View More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+</div>
+<div class="row">
+    <div class="d-flex flex-column align-items-center col-10 offset-1 mt-3">
+        <div class="row">
+            <h3> <strong> Education </strong></h3>
+        </div>
+        <div class="row home-edu-img-box">
+            {% for key in all_edu %}
+            {% for img in all_edu[key]['img'] %}
+            {% set img_loc = all_edu[key]['img'][loop.index0] %}
+            <a class="home-edu-img" href="{{ all_edu[key]['url'] }}">
+                <img src="{{ url_for('static', filename=img_loc) }}" alt="Education Logo"
+                    class="ms-1 mb-3 p-0 boarder grow-on-hover">
+            </a>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="d-flex flex-column align-items-center col-10 offset-1 mt-3">
+        <div class="row">
+            <h3> <strong> Technologies </strong></h3>
+        </div>
+        <div class="row">
+            <p>With many to be learned in the future!</p>
+        </div>
+        <div class="row tech-box mb-3">
+            {% for tech in all_tech.imgs %}
+            <img class="grow-on-hover" src="{{url_for('static', filename='img/tech/'+tech)}}" alt="Technologies icon">
+            {% endfor %}
         </div>
     </div>
 </div>

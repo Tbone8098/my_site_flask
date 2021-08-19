@@ -14,15 +14,20 @@
     <div class="title-blocks">
         {% for school_id in all_edu %}
         <a link="/edu/{{school_id}}" class="title-block txt-black link">
-            <div class="d-flex justify-content-between me-4">
+            <div class="d-flex justify-content-between me-4 ms-3">
                 <h1>{{all_edu[school_id]['title']}}</h1>
                 <span class="a-tag">View</span>
             </div>
-            <p>{{all_edu[school_id]['start_date'].strftime('%Y-%m-%d') }} - {{'Present' if all_edu[school_id]['present']
-                ==
-                True else
-                all_edu[school_id]['end_date'].strftime('%Y-%m-%d') }}
-            </p>
+            <div class="bg-dark-1 txt-white">
+                <div class="ms-3">
+                    <p>{{all_edu[school_id]['start_date'].strftime('%b %Y') }} - {{'Present' if
+                        all_edu[school_id]['present']
+                        ==
+                        True else
+                        all_edu[school_id]['end_date'].strftime('%b %Y') }}
+                    </p>
+                </div>
+            </div>
         </a>
         {% endfor %}
     </div>

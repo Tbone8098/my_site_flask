@@ -148,6 +148,23 @@ a {
   pointer-events: none;
 }
 
+.home-edu-img-box {
+  display: flex;
+}
+
+.home-edu-img {
+  width: fit-content;
+}
+
+.home-edu-img > img {
+  width: 15vw;
+  height: 15vw;
+}
+
+.boarder {
+  border: 1px solid black;
+}
+
 .home-box {
   overflow-y: auto;
 }
@@ -158,10 +175,25 @@ a {
 }
 
 .tech-box {
-  /* margin: 1em; */
   padding: 1em;
   border: 1px solid black;
   background: var(--gray-1);
+}
+
+.tech-box > img {
+  width: 15vw;
+}
+
+@media screen and (min-width: 427px) {
+  .tech-box > img {
+    width: 10vw;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .tech-box > img {
+    width: 7vw;
+  }
 }
 
 .title-blocks {

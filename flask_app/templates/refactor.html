@@ -1,0 +1,33 @@
+<div class="row home-box my-5">
+    <div class="col-10 offset-1 col-sm-5 mb-3">
+        <div class="row home-box">
+            <div class="home-middle txt-center">
+                <div class="row">
+                    <h3>About Me</h3>
+                </div>
+                <div class="row">
+                    <div class="offset-1 col-10">
+                        <p>{{about_me.content | safe | truncate(250)}}</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="/about_me">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Education</h3>
+        {% for edu in all_edu %}
+        he
+        {% endfor %}
+    </div>
+    <div class="tech-box col-10 offset-1 col-sm-5 offset-sm-1">
+        <h3>Technologies I have learned along the way</h3>
+        <p>With many to be learned in the future!</p>
+        {% for tech in all_tech.imgs %}
+        <img class="grow-on-hover" src="{{url_for('static', filename='img/tech/'+tech)}}" alt="">
+        {% endfor %}
+    </div>
+
+</div>

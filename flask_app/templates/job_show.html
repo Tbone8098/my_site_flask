@@ -6,7 +6,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item"><a href="/jobs">Jobs</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{job['title']}}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{job['crumb']}}</li>
         </ol>
     </nav>
 </div>
@@ -17,7 +17,7 @@
         <a href="{{job['link']}}">{{job['link']}}</a>
     </div>
     <div class="row">
-        <p>{{job['content']}}</p>
+        <p>{{job['content'] | safe}}</p>
     </div>
 </div>
 

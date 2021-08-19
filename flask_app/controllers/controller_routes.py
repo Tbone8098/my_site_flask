@@ -13,7 +13,8 @@ def index():
     session['page_type'] = 'base'
     context = {
         'about_me': data.about_me,
-        'all_tech': data.tech
+        'all_tech': data.tech,
+        'all_edu': data.edu,
     }
     return render_template('home.html', **context)
 
