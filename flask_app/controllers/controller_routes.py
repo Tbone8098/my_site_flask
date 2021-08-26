@@ -83,7 +83,12 @@ def contact_me():
     session['page_head'] = 'contact me'
     session['page'] = 'contact me'
     session['page_base'] = 'base'
-    return render_template('contact_me.html')
+
+    context = {
+        'about_me': data.about_me
+    }
+
+    return render_template('contact_me.html', **context)
 
 @app.route('/about_me')
 def about_me():
@@ -91,7 +96,7 @@ def about_me():
     session['page'] = 'about me'
     session['page_base'] = 'base'
     context = {
-        "info": data.about_me
+        "about_me": data.about_me
     }
     return render_template('about_me.html', **context)
 

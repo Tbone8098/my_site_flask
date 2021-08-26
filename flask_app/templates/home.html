@@ -1,24 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row">
-    <div class="d-flex flex-column align-items-center col-10 offset-1 mt-3">
-        <div class="row">
-            <h3> <strong> About Me </strong></h3>
+<div class="row m-0 mb-5 p-0 justify-content-center align-items-center">
+    <div class="d-flex align-items-center d-none d-sm-flex">
+        <div class="col-6 d-flex justify-content-end"">
+            {% set img = 'img/me/img8.5.jpg' %}
+            <img src=" {{url_for('static', filename=img)}}" alt="about me" class="home-half-img">
         </div>
-        <div class="row">
-            {{ about_me.content | safe | truncate(250) }}
+        <div class="col-4 ps-3">
+            <div class="row">
+                <h3> <strong> About Me </strong></h3>
+            </div>
+            <div class="row">
+                {{ about_me.content | safe | truncate(250) }}
+            </div>
+            <div class="row d-none d-sm-block">
+                <a href="/about_me">View More</a>
+            </div>
         </div>
-        <div class="row">
+    </div>
+
+    <div class="d-flex-column d-sm-none text-center p-0">
+        <div class="col-full">
+            {% set img = '/img/me/img8.jpg' %}
+            <img src="{{url_for('static', filename=img)}}" alt="me" class="w-100">
+        </div>
+        <div class="col-full">
+            <h3><strong>About Me</strong></h3>
+        </div>
+        <div class="col-10 offset-1">
+            <p class="">{{ about_me.content | safe | truncate(100) }}</p>
             <a href="/about_me">View More</a>
         </div>
     </div>
 </div>
-<div class="row">
+
+<div class="row m-0 p-0 mt-5 mb-5">
     <div class="d-flex flex-column align-items-center col-10 offset-1 mt-3">
         <div class="row">
             <h3> <strong> Education </strong></h3>
         </div>
-        <div class="row home-edu-img-box">
+        <div class="home-edu-img-box">
             {% for key in all_edu %}
             {% for img in all_edu[key]['img'] %}
             {% set img_loc = all_edu[key]['img'][loop.index0] %}
@@ -31,7 +52,8 @@
         </div>
     </div>
 </div>
-<div class="row">
+
+<div class="row m-0 p-0 mt-5 mb-5">
     <div class="d-flex flex-column align-items-center col-10 offset-1 mt-3">
         <div class="row">
             <h3> <strong> Technologies </strong></h3>
